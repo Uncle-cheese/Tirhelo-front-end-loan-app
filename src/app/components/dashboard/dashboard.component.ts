@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 
+
 interface SideNavToogle {
   screenWidth: number;
   collapsed: boolean;
 }
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss'
 })
-export class AppComponent {
-  title = 'tirhelo-frontend';
-  
+export class DashboardComponent {
+
   isSideNavCollapsed = false;
   screenWidth = 0;
 

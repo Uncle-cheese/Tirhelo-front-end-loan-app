@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="label-col">
+            <h3>Dashboard</h3>
+        </div>
+        <div class="search search-col">
+            <span class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="search" class="search-input" name="" id="" placeholder="search">
+        </div>
+        <div class="btn-apply btn-col">
+            <a href="#" class="btn"><span><i class="fa-solid fa-plus icon"></i></span>Apply Loan</a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+
+        <ul *ngFor="let tab of tabs">
+            <li>
+                <a class="tab-nav-link" href="#" [routerLink]="[tab.routerLink]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <i class="tab-nav-icon" style="margin: 0 0.5rem;" [class]="tab.icon"></i>
+                    <span class="tab-nav-label">{{tab.label}} <span class="circle">{{tab.record}}</span></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <app-active-trades></app-active-trades>
+</div>

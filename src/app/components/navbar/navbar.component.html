@@ -1,0 +1,26 @@
+<nav class="fixed-top">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <span><img src="../../../assets/PHOTO-2023-08-08-14-23-17 (5).jpg" alt=""  class="image"></span><label for="" class="logo">Tirhelo Financial Services</label>
+    <ul>
+        <li><p style="color: #fff;" href="" class="active"><span class="circle">NM</span>Nhlanhla Mavundla</p></li>
+        <li  onclick="toogleMenu()"><a href="" ><i class="fa-solid fa-gear"></i></a></li>
+    </ul>
+
+    <div *ngIf="!openProfile" class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+            <a href="#" class="sub-menu-link">
+                <i class="icons fa-solid fa-user"></i>
+                <p>Edit Profile</p>
+                <span>></span>
+            </a>
+            <a href="#" class="sub-menu-link">
+                <i class="icons fa-solid fa-right-from-bracket"></i>
+                <p>Logout</p>
+                <span>></span>
+            </a>
+        </div>
+    </div>
+</nav>

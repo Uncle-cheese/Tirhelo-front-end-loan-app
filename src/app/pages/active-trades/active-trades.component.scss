@@ -1,0 +1,49 @@
+// tr {
+//     background: grey;
+// }
+
+.tbl {
+    height: 10vh;
+    width: 1vw;
+    min-width: 75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    overflow: hidden;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headers {
+    background: gray;
+    border: 2px;
+    color: #000;
+}
+
+.status {
+    color: #006b21;
+}
+
+.status .up-to-date {
+    color: #006b21;
+}
+
+.tbl-record {
+    width: 100%;
+}
+
+
+
+

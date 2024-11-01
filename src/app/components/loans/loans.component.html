@@ -1,0 +1,116 @@
+<div class="container-fluid" id="main-container">
+    <div class="row">
+        <div class="label-col">
+            <h3>Loan Applications</h3>
+        </div>
+        <!-- <form action="">
+
+            <div class="search search-col">
+                <span class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="search" (ngModelChange)="searchLoan(key.value)" #key="ngModel" ngModel class="search-input"
+                  placeholder="search" name="key" id="" class="form-control">
+            </div>
+        </form> -->
+        <div class="search search-col">
+            <span class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="search" class="search-input" (ngModelChange)="searchLoan(key.value)" #key="ngModel" ngModel name="" id="" placeholder="search">
+        </div>
+        <div class="btn-apply btn-col">
+            <a href="#" class="btns"><span><i class="fa-solid fa-plus icon"></i></span>Apply Loan</a>
+        </div>
+    </div>
+    <nav >
+
+                <a class="tab-nav-link" style="margin: 0 0.5rem;" href="#">
+                    <i class="fa fa-check tab-nav-icon" style="margin: 0 0.5rem;"></i>
+                    <span class="tab-nav-label">My work Item <span class="circle">0</span></span>
+                </a>
+                <a class="tab-nav-link" style="margin: 0 0.5rem;" href="#">
+                    <i class="fa fa-bars tab-nav-icon" style="margin: 0 0.5rem;"></i>
+                    <span class="tab-nav-label">Active Loans <span class="circle">0</span></span>
+                </a>
+                <a class="tab-nav-link" style="margin: 0 0.5rem;" href="#">
+
+                    <i class="fa fa-arrow-right tab-nav-icon" style="margin: 0 0.5rem;"></i>
+                    <span class="tab-nav-label">Drafts <span class="circle">0</span></span>
+                </a>
+                <a class="tab-nav-link" style="margin: 0 0.5rem;" href="#">
+
+                    <i class="fa fa-xmark tab-nav-icon" style="margin: 0 0.5rem;"></i>
+                    <span class="tab-nav-label">Closed <span class="circle">0</span></span>
+                </a>
+
+    </nav>
+
+    <table class="w-full border-4 tbl-record">
+        <thead>
+            <tr class="headers">
+                <th class="p-3 border text-left bg-gray-200">Ref No</th>
+                <th class="p-3 border text-left bg-gray-200">Name</th>
+                <th class="p-3 border text-left bg-gray-200">Loan Amount</th>
+                <th class="p-3 border text-left bg-gray-200">Balance</th>
+                <th class="p-3 border text-left bg-gray-200">Issued Date</th>
+                <th class="p-3 border text-left bg-gray-200">Due Date</th>
+                <th class="p-3 border text-left bg-gray-200">Entity Type</th>
+                <th class="p-3 border text-left bg-gray-200">Action</th>
+                <th class="p-3 border text-left bg-gray-200">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (loan of visibleData(); track loan;) {
+                    <tr class="border">
+                    
+                    <td class="p-3 border">{{loan.refNo}}</td>
+                    <td class="p-3 border">{{loan.name}}</td>
+                    <td class="p-3 border">{{loan.loanAmount}}</td>
+                    <td class="p-3 border">{{loan.balance}}</td>
+                    <td class="p-3 border">{{loan.issuedDate}}</td>
+                    <td class="p-3 border">{{loan.dueDate}}</td>
+                    <td class="p-3 border">{{loan.entityType}}</td>
+                    <td class="p-3 border"><button type="button" class="btn btn-claim ">claim</button></td>
+                    <td class="p-3 border status up-to-date">{{loan.status}}</td>
+                </tr>
+                }
+        </tbody>
+    </table>
+    <div *ngIf="filteredLoans?.length == 0" class="no-record">
+        <p>No loan application</p>
+    </div>
+
+    <div *ngIf="filteredLoans?.length !== 0" class="pagination">
+        <button class="mr-2 btn" (click)="previousPage()"> Previous</button>
+        @for (pageNumber of pageNumbers(); track pageNumber; let i = $index) {
+
+            <button class="mr-2 btn"
+            [class.bg-cyan-500]="i + 1 == currentPage"
+            (click)="changePage(i+1)"
+            > {{i + 1}}</button>
+        }
+        <button class="mr-2 btn" (click)="nextPage()"> next</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade modal-dialog-centered" id="claimModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

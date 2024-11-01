@@ -1,0 +1,199 @@
+.container-fluid {
+    padding-top: 84px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+}
+
+.search {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background: #e7e5e5;
+    width: 600px;
+}
+
+.search-input {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: #333333;
+    margin-left: 14px;
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+}
+.search-input::placeholder,
+.search-icon {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.btn-apply {
+width: 6px;
+}
+
+.btns {
+    font-family: 'Lexend', sans-serif;
+    margin-left: -156px;
+    // font-size: 18px;
+    font-weight: bold;
+    background: #000;
+    width: 160px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 24px;
+    cursor: pointer;
+    flex: 1;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+    border: 2px solid #00FF27;
+}
+
+.btn-claim {
+    font-family: 'Lexend', sans-serif;
+    background: #000;
+    color: #fff;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    width: 100%;
+    border: 2px solid #00FF27;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    box-shadow: 0 0 20px rgba(0, 0,0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.btn .icon {
+    margin-right: 14px;
+}
+
+h3 {
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+}
+
+nav {
+    position: relative;
+    height: 10vh;
+    width: 100%;
+    min-width: 75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    color: #817C7C;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    background-color: #00FF27;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #00FF27;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.container-fluid {
+    padding-top: 84px;
+}
+
+
+.active {
+    background-color: #00FF27;
+
+    .sidenav-link-icon,
+    .sidenav-link-text {
+        color: #000;
+    }
+}
+
+.circle {
+    background: #817C7C;
+    color: #fff;
+    display: inline-block;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.circle:hover {
+    background: #00FF27;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.headers {
+    background: gray;
+    border: 2px;
+    color: #000;
+}
+
+.tbl-record {
+    width: 100%;
+}
+
+.no-record {
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

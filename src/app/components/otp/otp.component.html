@@ -1,0 +1,33 @@
+<!-- Card -->
+<div class="container">
+    <div class="card">
+        <!-- iNPUT BOX SESSION -->
+        <div class="container_input">
+            <form action="" class="sign-in-form" [formGroup]="userForm">
+                <div class="otp-header">
+                    <p>Your one-time-pin has been sent to <br> <span><h4>{{mobileNumber | mask}}</h4></span></p>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="text" placeholder="OTP number" formControlName="otpNumber" name="" id="">
+                </div>
+                <div class="text-danger otp-input" *ngIf="userForm.controls['otpNumber'].invalid && (userForm.controls['otpNumber'].touched || userForm.controls['otpNumber'].dirty || isFormSubmitted)">
+                    <small *ngIf="userForm.controls['otpNumber'].errors?.['required']">otp is required</small>
+                    <small *ngIf="userForm.controls['otpNumber'].errors?.['minlength']" style="position: relative; left: 1rem;">OTP should be 6 value long </small>
+                    <small *ngIf="userForm.controls['otpNumber'].errors?.['maxlength']" style="position: relative; left: 1rem;">OTP can not be 6 value long</small>
+                </div>
+                <label for="">Your OTP will expire in </label>
+                <div class="btn-submit">
+                    <div>
+                        
+                        <input type="submit" value="Verify" class="btn btn-verify" (click)="onSubmit()" name="" id="">
+                    </div>
+                    <div>
+
+                        <input type="submit" value="Resend" class="btn" (click)="onSubmit()" name="" id="">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

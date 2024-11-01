@@ -1,0 +1,47 @@
+
+<div class="container-fluid ">
+
+    <table class="w-full border-4 tbl-record">
+        <thead>
+            <tr class="headers">
+                <th class="p-3 border text-left bg-gray-200">Ref No</th>
+                <th class="p-3 border text-left bg-gray-200">Name</th>
+                <th class="p-3 border text-left bg-gray-200">Loan Amount</th>
+                <th class="p-3 border text-left bg-gray-200">Balance</th>
+                <th class="p-3 border text-left bg-gray-200">Issued Date</th>
+                <th class="p-3 border text-left bg-gray-200">Due Date</th>
+                <th class="p-3 border text-left bg-gray-200">Entity Type</th>
+                <th class="p-3 border text-left bg-gray-200">Action</th>
+                <th class="p-3 border text-left bg-gray-200">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (loan of visibleData(); track loan;) {
+                    <tr class="border">
+                    
+                    <td class="p-3 border">{{loan.refNo}}</td>
+                    <td class="p-3 border">{{loan.name}}</td>
+                    <td class="p-3 border">{{loan.loanAmount}}</td>
+                    <td class="p-3 border">{{loan.balance}}</td>
+                    <td class="p-3 border">{{loan.issuedDate}}</td>
+                    <td class="p-3 border">{{loan.dueDate}}</td>
+                    <td class="p-3 border">{{loan.entityType}}</td>
+                    <td class="p-3 border"></td>
+                    <td class="p-3 border status up-to-date">{{loan.status}}</td>
+                </tr>
+                }
+        </tbody>
+    </table>
+</div>
+
+    <div class="pagination">
+        <button class="text-cyan-500 border-4 py-2 rounded-l-lg cursor-pointer mr-2 btn" (click)="previousPage()"> Previous</button>
+        @for (pageNumber of pageNumbers(); track pageNumber; let i = $index) {
+
+            <button class="text-cyan-500 border-4 py-2 rounded-l-lg cursor-pointer mr-2 btn"
+            [class.bg-cyan-500]="i + 1 == currentPage"
+            (click)="changePage(i+1)"
+            > {{i + 1}}</button>
+        }
+        <button class="text-cyan-500 border-4 py-2 rounded-l-lg cursor-pointer mr-2 btn" (click)="nextPage()"> next</button>
+    </div>
